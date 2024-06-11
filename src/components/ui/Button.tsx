@@ -1,15 +1,15 @@
 import clsx from "clsx"
-import s from "../scss/components/ui/Button.module.scss"
+import s from "../../scss/components/ui/Button.module.scss"
 
-interface ButtonProps {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     children?: React.ReactNode
     rounded?: boolean
-    type?: "primary" | "secondary"
+    variant?: "primary" | "secondary"
     width?: "full" | "initial"
 }
 
-export const Button = ({children, rounded = false, type = "primary"}: ButtonProps) => {
+export const Button = ({children, rounded = false, variant = "primary", width = "initial", ...props}: ButtonProps) => {
     return(
-        <button className={clsx(s.button, rounded && s.rounded, s[type])}>{children}</button>
+        <button {...props} className={clsx(s.button, rounded && s.rounded, s[variant], s[width])}>{children}</button>
     )
 }

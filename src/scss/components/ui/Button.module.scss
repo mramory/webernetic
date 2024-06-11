@@ -2,6 +2,7 @@
 
 .button{
     padding: 12px 12px 12px 24px;
+    border-radius: 4px;
     background-color: v.$accent;
     color: v.$white;
     font-size: 18px;
@@ -16,7 +17,12 @@
 
     &.secondary{
         color: v.$accent;
-        background-color: v.$white;
+        background-color: #F0F4FC;
+        border: 1px solid v.$accent;
+    }
+
+    &.full{
+        width: 100%;
     }
 }
 

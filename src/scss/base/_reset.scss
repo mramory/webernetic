@@ -95,6 +95,10 @@ table {
 input {
   appearance: none;
   border-radius: 0;
+  border: none;
+  &:focus-visible{
+    outline: none;
+  }
 }
 
 button{
