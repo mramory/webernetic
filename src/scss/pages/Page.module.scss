@@ -1,3 +1,5 @@
+@use "../abstracts/variables" as v;
+
 .wrapper {
     padding: 36px 40px;
     display: grid;
@@ -5,18 +7,18 @@
     grid-template-rows: 1fr;
 }
 
-.info{
+.info {
     background-color: #EBF0FA;
     display: flex;
     align-items: center;
     max-width: 910px;
 
-    & > div{
+    &>div {
         max-width: 511px;
         margin-left: 72px;
     }
 
-    h1{
+    h1 {
         color: #1F4284;
         font-size: 30px;
         font-weight: 500;
@@ -25,7 +27,7 @@
         -webkit-text-stroke: 1px #000000
     }
 
-    p{
+    p {
         font-size: 17px;
         font-weight: 400;
         line-height: 27.2px;
@@ -33,18 +35,75 @@
         margin: 18px 0 36px 0;
     }
 }
-.image{
+
+.image {
     max-width: 910px;
     margin-left: auto;
-    img{
+
+    img {
         width: 100%;
         height: 100%;
     }
 }
 
+
+.modal {
+    h2 {
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 33px;
+        color: #323232;
+        text-shadow: 0px 4px 4px #00000040;
+        margin-bottom: 18px;
+    }
+
+    .inputs {
+        display: flex;
+        flex-direction: column;
+        row-gap: 4px;
+    }
+
+    .checkbox {
+        margin: 24px 0;
+        display: flex;
+        align-items: center;
+        text-shadow: 0px 4px 4px #00000040;
+
+        input {
+            appearance: auto;
+            width: 18px;
+            height: 18px;
+            box-shadow: 0px 4px 4px 0px #00000040;
+        }
+    }
+
+    a {
+        cursor: pointer;
+        color: v.$accent;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 27.32px;
+        text-shadow: 0px 4px 4px #00000040;
+    }
+
+    .btns {
+        margin-top: 36px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 4px;
+
+        button {
+            display: flex;
+            justify-content: center;
+            padding: 18px;
+            box-shadow: 0px 4px 4px 0px #00000040;
+        }
+    }
+}
+
 @media screen and (max-width: 1440px) {
     .info {
-        h1{
+        h1 {
             text-shadow: none;
             -webkit-text-stroke: 0;
             font-size: 26px;
@@ -53,23 +112,27 @@
 }
 
 @media screen and (max-width: 1300px) {
-    .wrapper{
+    .wrapper {
         grid-template-columns: 1fr;
         grid-template-rows: initial
     }
-    .info{
+
+    .info {
         padding: 24px;
         max-width: initial;
-        & > div{
+
+        &>div {
             max-width: initial;
             margin-left: 0;
         }
-        .arrow{
+
+        .arrow {
             width: 36px;
             height: 36px;
         }
     }
-    .image{
+
+    .image {
         max-width: initial;
         margin-left: 0;
     }
